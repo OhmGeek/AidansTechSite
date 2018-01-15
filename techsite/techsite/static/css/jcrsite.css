@@ -1,0 +1,332 @@
+/*html,body{height:100%;}*/
+/*.carousel,.item,.active{height:100%;}*/
+/*.carousel-inner{height:100%;}*/
+
+/* Override Bootstrap Container Sizes */
+@media (min-width: 2400px) {
+  .container {
+      width: 1920px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px !important;
+    }
+}
+
+body {
+  margin: 0 0 100px;
+  clear: both;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+}
+
+nav {
+  display: inline-block;
+  margin: 0 auto;
+  float: none;
+}
+.page-container {
+  min-height: 50vh;
+}
+.navbar-toggler-center {
+  align-self: center !important; /* Make hamburger be in the middle */
+}
+.aidans-header-row {
+  text-align: center !important;
+}
+.aidans-header-row a {
+  color: white;
+}
+
+.navbar-brand-text {
+  vertical-align: middle;
+}
+.bg-darkred {
+  background-color: #BB2222;
+}
+
+.footer-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.custom-navbar-toggle {
+  float: none !important;
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
+.navbar-center-block {
+  margin: 0 auto !important;
+  display: inline-block;
+}
+.navbar-brand {
+  text-align: center !important;
+
+}
+footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  margin-top: 3rem;
+  background-color: darkgreen;
+  text-align: center;
+  display: block;
+  color: white;
+}
+
+footer a {
+  color: turquoise;
+}
+
+.carousel-img-custom {
+  height: auto !important;
+  max-height: auto;
+  width: 100%;
+
+}
+
+.navbar-title-text {
+  padding-left: 3px;
+}
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  margin-top: 30px;
+}
+
+.person-group {
+  padding-bottom: 20px;
+}
+
+/* Fix indent error for Alert on Homepage */
+.alert {
+  margin-bottom: 0px !important;
+}
+/* Front page card niceties. From #1580 on littlesnippets.net */
+.snip1580 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 8px;
+  min-width: 250px;
+  max-width: 310px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.snip1580 * {
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.snip1580 img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+.snip1580 figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.snip1580 h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 3px 0;
+}
+.snip1580 h5 {
+  font-weight: 400;
+  margin: 0;
+  color: #bbb;
+  letter-spacing: 1px;
+}
+.snip1580 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.snip1580:hover figcaption,
+.snip1580.hover figcaption {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background-color: #fff;
+}
+.snip1580:hover h4,
+.snip1580.hover h4,
+.snip1580:hover p,
+.snip1580.hover p {
+  color: #333;
+}
+
+.blog-thumbnail {
+  min-height: 200px !important;
+}
+.photo:hover {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.photos {
+  border: 5px solid lightgreen;
+  padding: 1rem;
+  margin: 5px;
+  background-color: #f9bdbd;
+}
+
+.title-header {
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+/*LittleSnippets.net #1529 for blog*/
+
+.snip1529 {
+  background-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  float: left;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 10px 1%;
+  max-width: 310px;
+  min-width: 250px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.snip1529 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.snip1529 img {
+  max-width: 100%;
+  vertical-align: top;
+  position: relative;
+  opacity: 0.75;
+}
+
+.snip1529 figcaption {
+  padding: 25px 20px 25px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.snip1529 .date {
+  background-color: #fff;
+  color: #333;
+  font-size: 18px;
+  font-weight: 800;
+  min-height: 48px;
+  min-width: 48px;
+  padding: 10px 0;
+  position: absolute;
+  right: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+}
+
+.snip1529 .date span {
+  display: block;
+  line-height: 14px;
+}
+
+.snip1529 .date .month {
+  font-size: 11px;
+}
+
+.snip1529 h3,
+.snip1529 p {
+  margin: 0;
+  padding: 0;
+}
+
+.snip1529 h3 {
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.snip1529 .hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  background-color: rgba(236, 188, 46, 0.75);
+  display: flex;
+  font-size: 65px;
+  justify-content: center;
+  opacity: 0;
+}
+
+.snip1529 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.snip1529:hover .hover,
+.snip1529.hover .hover {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  opacity: 1;
+}
+
+.snip1529:hover figcaption,
+.snip1529.hover figcaption {
+  opacity: 0;
+}
+
+.snip1529:hover .date,
+.snip1529.hover .date {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.bottom {
+  background-color: #AA2222;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0px !important;
+
+}

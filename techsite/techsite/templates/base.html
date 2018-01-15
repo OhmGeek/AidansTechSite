@@ -1,3 +1,4 @@
+{% load static %}
 <html>
   <head>
     <meta charset="utf-8" />
@@ -9,6 +10,7 @@
     <!-- Bootstrap with Theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.css">
+    <link rel="stylesheet" href="{% static 'css/jcrsite.css' %}">
   </head>
   <body>
         <!-- First, the Aidan's header -->
@@ -20,8 +22,6 @@
     {% block content %}
 
     {% endblock %}
-
-
 
     <!-- JavaScript -->
     <script

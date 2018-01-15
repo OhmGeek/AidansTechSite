@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+View Items | St Aidan's Tech Hires
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <ul class="nav nav-tabs">
+    {% for section in categories %}
+      <li role="presentation" data-toggle="tab" {% if forloop.counter == 1 %} class="active" {% endif %}><a href="#">{{ section.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+
+</div>
+
+{% endblock %}

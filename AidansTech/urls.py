@@ -19,9 +19,9 @@ from django.contrib import admin
 
 import tech
 from AidansTech import settings
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^info/', include('infopages.urls')),
     url(r'', include('tech.urls'))
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,7 @@
+{% extends 'tech/base.html' %}
+{% block main %}
+<div class="w3-container">
+  <h2>{{page.title}}</h2>
+  {{ page.content |safe }}
+</div>
+{% endblock %}

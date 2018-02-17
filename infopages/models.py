@@ -4,3 +4,4 @@ from tinymce.models import HTMLField
 class InfoPage(models.Model):
     title = models.CharField(max_length=120)
     content = HTMLField()
+    slug = models.SlugField(max_length=20)

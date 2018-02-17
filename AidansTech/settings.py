@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'infopages',
     'tinymce',
     'hires',
+    'AidansTech',
 ]
 
 MIDDLEWARE = [

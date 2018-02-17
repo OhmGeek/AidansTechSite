@@ -16,13 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-
 import tech
 from AidansTech import settings
+from .views import welcome
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^info/', include('infopages.urls')),
     url(r'^hires/', include('hires.urls')),
-    url(r'', include('tech.urls'))
+    url(r'^equipment/', include('tech.urls')),
+    url(r'^', welcome)
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

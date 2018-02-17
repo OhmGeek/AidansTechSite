@@ -1,0 +1,14 @@
+.badge {
+    margin-right: 2px;
+}
+
+.grid {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.grid-item {
+    margin-left:auto !important;
+    margin-right:auto !important;
+    width: 16rem !important;
+}

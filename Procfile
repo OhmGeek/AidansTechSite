@@ -1,0 +1,1 @@
+web: gunicorn AidansTech.wsgi --log-file -

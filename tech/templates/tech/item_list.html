@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "tech/select2.min.css" %}">
+    <link rel="stylesheet" href="{% static "tech/custom.css" %}">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>St Aidan's JCR Tech</h1>
+            <p>Inventory and Hire Requests</p>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <div>
+                <div class="input-group">
+                    <form id="searchform" action="{% url 'search_list' %}" method="get" accept-charset="utf-8">
+                    <input type="text" class="form-control-static" name="q" placeholder="Search for...">
+{#                    <span class="input-group-btn">#}
+                        <button class="btn btn-secondary" type="submit">Go!</button>
+                        <!-- TODO make search actually work -->
+{#                    </span>#}
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-group">
+                    <label for="form-control filter-options">Filter by tag: </label>
+                    <span class="input-group-lg">
+                        <select id="filter-options" class="js-example-basic-multiple form-control" multiple>
+                            {% for sTag in itemtags %}
+                                <option class="filter-option">{{ sTag }}</option>
+                            {% endfor %}
+                        </select>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container text-center">
+        <div class="grid">
+            {% for item in items %}
+                <div class="card grid-item bg-faded {% for t in item.tags.all %} {{ t }} {% endfor %}">
+                    <img class="card-img-top img-responsive" style="max-width:100%;max-height:400px;" src="{{ item.image }}" alt="{{ item.name }}" title="{{ item.name }}">
+                    <div class="card-block">
+                        <h3 class="card-title">{{ item.name }}</h3>
+                        <p class="card-text">{{ item.description }}</p>
+                        <p class="card-text text-muted">Quantity: {{ item.quantity }}</p>
+                        <a href="{% url 'item_view' %}?id={{item.pk}}" class="card-link">Details</a>
+                    </div>
+                    <div class="card-footer tag-list">
+                        {% for t in item.tags.all %}
+                            {% if "Power" == t|stringformat:"s" %}
+                                <span class="badge badge-danger">
+                            {% elif "Sound" == t|stringformat:"s" %}
+                                <span class="badge badge-success">
+                            {% elif "Lighting" == t|stringformat:"s" %}
+                                <span class="badge badge-primary">
+                            {% else %}
+                                <span class="badge badge-default">
+                            {% endif %}
+                                {{ t }}
+                            </span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="{% static "tech/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "tech/packery-mode.pkgd.min.js" %}"></script>
+    <script src="{% static "tech/select2.full.min.js" %}"></script>
+    <script src="{% static "tech/tech.js" %}"></script>
+</body>
+
+</html>

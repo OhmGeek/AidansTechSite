@@ -1,0 +1,23 @@
+<html>
+
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>
+              Controls
+            </th>
+        </tr>
+        {% for item in cart %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.total_price }}</td>
+            <td>
+              <a href="{% url 'remove_from_cart'%}?id={{item.id}}">DEL</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</html>

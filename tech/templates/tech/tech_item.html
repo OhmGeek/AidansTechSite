@@ -1,44 +1,15 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'tech/base.html' %}
+{% block main %}
+<div class="w3-container">
+    <h1>{{ item.name }}</h1>
+    <p>
+      {{ item.description }}
+    </p>
+    <p>
+      Quantity: {{ item.quantity }}
+    </p>
+    <a href="{% url 'add_to_cart' %}?id={{ item.id }}&quantity=1" class="btn btn-primary">Add to Basket</a>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inventory</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "tech/select2.min.css" %}">
-    <link rel="stylesheet" href="{% static "tech/custom.css" %}">
-</head>
-
-<body>
-    <div class="jumbotron">
-        <div class="container">
-            <h1>St Aidan's JCR Tech</h1>
-            <p>Inventory and Hire Requests</p>
-        </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <img src="{{ item.image }}" alt="{{ item.name }}"></img>
-      </div>
-
-      <h1>{{ item.name }}</h1>
-      <p>
-        {{ item.description }}
-      </p>
-      <p>
-        Quantity: {{ item.quantity }}
-      </p>
-      <div class="row">
-        <a href="{% url 'add_to_cart' %}?id={{ item.id }}&quantity=1" class="btn btn-primary">Add to Basket</a>
-      </div>
-    </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-</body>
-
-</html>
+</div>
+    
+{% endblock %}

@@ -20,10 +20,11 @@ import tech
 from AidansTech import settings
 from .views import welcome
 urlpatterns = [
+    url(r'^$', welcome),
     url(r'^admin/', admin.site.urls),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^info/', include('infopages.urls')),
     url(r'^hires/', include('hires.urls')),
     url(r'^equipment/', include('tech.urls')),
-    url(r'^', welcome)
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

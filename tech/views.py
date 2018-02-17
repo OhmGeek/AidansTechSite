@@ -28,12 +28,10 @@ def search_list(request):
 
     # default to an empty string if no search term present
     items = TechItem.objects.filter(name__icontains=text_search_query)
-    tags = TechTag.objects.all()
-    return render(request, 'tech/item_list.html', {'items': items, 'itemtags': tags})
+    return render(request, 'tech/search_list.html', {'items': items, 'query': text_search_query})
 
-def item_view(request):
+def item_view(request,tech_id):
     """View a list of all the items"""
-    tech_id = request.GET['id']
     item = TechItem.objects.get(pk=tech_id)
 
     return render(request, 'tech/tech_item.html', {'item': item})

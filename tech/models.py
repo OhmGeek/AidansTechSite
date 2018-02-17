@@ -1,23 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-
-class TechTag(models.Model):
-    """ Tags assigned to items"""
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        """ Override the Tag Name """
-        return self.name
-
-
 # Create your models here.
 class TechItem(models.Model):
     """ Individual items """
     name = models.CharField(max_length=70)
     description = models.TextField()
     quantity = models.IntegerField()
-    tags = models.ManyToManyField(TechTag, blank=True)
     image = models.URLField()
     cost = models.DecimalField(max_digits=6, decimal_places=2)
 

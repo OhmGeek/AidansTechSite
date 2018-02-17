@@ -7,7 +7,7 @@ from django.template import RequestContext
 from django.utils.datastructures import MultiValueDictKeyError
 from django.views.generic.detail import DetailView
 
-from .models import TechItem, TechTag
+from .models import TechItem
 from cart.cart import Cart
 import json
 from django.http import HttpResponse
@@ -15,8 +15,7 @@ from django.http import HttpResponse
 def item_list(request):
     """View a list of all the items"""
     items = TechItem.objects.all()
-    tags = TechTag.objects.all()
-    return render(request, 'tech/item_list.html', {'items': items, 'itemtags': tags})
+    return render(request, 'tech/item_list.html', {'items': items})
 
 
 def search_list(request):

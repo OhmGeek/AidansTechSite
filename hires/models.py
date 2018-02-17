@@ -8,8 +8,8 @@ class Hire(models.Model):
     hirer_name = models.CharField(max_length=100)
     invoice_name = models.CharField(max_length=100)
     email_address = models.EmailField()
-    date_out = models.DateTimeField()
-    date_in = models.DateTimeField()
+    date_out = models.DateField()
+    date_in = models.DateField()
     contact_number = models.CharField(max_length=20)
     waive_charges = models.BooleanField(default=False)
 

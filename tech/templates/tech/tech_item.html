@@ -6,10 +6,16 @@
       {{ item.description }}
     </p>
     <p>
-      Quantity: {{ item.quantity }}
+      <b>Quantity:</b> {{ item.quantity }}
     </p>
+
+    {% if item.weight_kg %}
+      <p><b>Weight (kg)</b> {{weight_kg}}</p>
+    {% endif %}
+
+    
     <a href="{% url 'add_to_cart' %}?id={{ item.id }}&quantity=1" class="btn btn-primary">Add to Basket</a>
 
 </div>
-    
+
 {% endblock %}

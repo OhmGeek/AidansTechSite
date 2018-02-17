@@ -9,7 +9,8 @@ class TechItem(models.Model):
     quantity = models.IntegerField()
     image = models.URLField()
     cost = models.DecimalField(max_digits=6, decimal_places=2)
-
+    weight_kg = models.DecimalField(max_digits=6, decimal_places=1, blank=True)
+    user_guide = models.URLField(blank=True)
 
     def __str__(self):
         """ Override the Item Name"""

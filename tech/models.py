@@ -14,20 +14,3 @@ class TechItem(models.Model):
     def __str__(self):
         """ Override the Item Name"""
         return self.name
-
-
-class Hire(models.Model):
-    """ A requested hire """
-    booking_name = models.CharField(max_length=250)
-    hirer_name = models.CharField(max_length=100)
-    invoice_name = models.CharField(max_length=100)
-    email_address = models.EmailField()
-    date_out = models.DateTimeField()
-    date_in = models.DateTimeField()
-    contact_number = models.CharField(max_length=20)
-
-
-class ItemHire(models.Model):
-    """ Specific items to hire """
-    item = models.ForeignKey(TechItem)
-    hire = models.ForeignKey(Hire)

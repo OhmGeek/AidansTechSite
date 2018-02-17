@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'cart',
     'infopages',
     'tinymce',
+    'hires',
 ]
 
 MIDDLEWARE = [

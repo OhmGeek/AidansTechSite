@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class TechItem(models.Model):
     """ Individual items """
@@ -14,3 +14,6 @@ class TechItem(models.Model):
     def __str__(self):
         """ Override the Item Name"""
         return self.name
+
+    def get_absolute_url(self):
+        return '/equipment/item/' + str(self.pk)

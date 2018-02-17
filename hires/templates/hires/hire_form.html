@@ -6,9 +6,10 @@
   <p>Please fill in the following details to create a hire</h2>
   <form method="POST" class="post-form">
     <!-- Set Custom Date Widgets -->
-
+    {% csrf_token %}
     <!-- Then Display Fields -->
     {% for hidden in form.hidden_fields %}
+
       {{ hidden }}
     {% endfor %}
 
